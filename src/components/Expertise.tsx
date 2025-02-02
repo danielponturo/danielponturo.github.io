@@ -1,6 +1,6 @@
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faDocker, faNodeJs } from '@fortawesome/free-brands-svg-icons';
+import { faReact, faGithub, faNodeJs } from '@fortawesome/free-brands-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
@@ -38,7 +38,7 @@ function Expertise() {
                     <div className='skill'>
                         <FontAwesomeIcon icon={faReact} size='3x' />
                         <h3>Front-End Web Development</h3>
-                        <p>I have experience building front-end web applications using technologies such as React and TailwindCSS.</p>
+                        <p>Experience building front-end web applications using technologies such as React and TailwindCSS.</p>
                         <div className='flex-chips'>
                             <span className='chip-title'>Tech stack:</span>
                             {labelsFirst.map((label, index) => (
@@ -50,7 +50,7 @@ function Expertise() {
                     <div className='skill'>
                         <FontAwesomeIcon icon={faNodeJs} size='3x' />
                         <h3>Back-End Web Development</h3>
-                        <p>I can build back-end applications in Node.js, such as RESTful APIS, and seamlessly integrate them with front-end clients.</p>
+                        <p>Experience building back-end applications in Node.js, such as RESTful APIS, and seamlessly integrating them with front-end clients.</p>
                         <div className='flex-chips'>
                             <span className='chip-title'>Tech stack:</span>
                             {labelsSecond.map((label, index) => (
@@ -60,9 +60,9 @@ function Expertise() {
                     </div>
 
                     <div className='skill'>
-                        <FontAwesomeIcon icon={faDocker} size='3x' />
+                        <FontAwesomeIcon icon={faGithub} size='3x' />
                         <h3>DevOps & Automation</h3>
-                        <p>I have experience working with CI/CD pipelines and consolidating them with various tools to provide useful stats in a DevOps environment.</p>
+                        <p>Experience working with CI/CD pipelines and consolidating them with various tools to provide useful stats in a DevOps environment.</p>
                         <div className='flex-chips'>
                             <span className='chip-title'>Tech stack:</span>
                             {labelsThird.map((label, index) => (
