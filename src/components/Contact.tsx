@@ -18,9 +18,7 @@ function Contact() {
                         <span><EmailIcon />&nbsp;<a href='mailto:daniel.ponturo99@gmail.com'>daniel.ponturo99@gmail.com</a></span>
                     </p>
                     <div className='cv-download' >
-                        <a href='../assets/documents/cv-daniel-ponturo.pdf' download>
-
-                            {/* Download my CV */}
+                        <a href='/downloads/cv-daniel-ponturo.pdf' download>
                             <p>Download my CV</p>
                             <BrowserUpdatedIcon style={{ fontSize: 60, margin: 0 }} />
                         </a>
