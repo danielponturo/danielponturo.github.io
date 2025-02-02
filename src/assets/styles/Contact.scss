@@ -7,10 +7,6 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 100px;
 
-  p {
-    font-size: larger;
-  }
-
   span {
     display: flex;
     align-items: center;
@@ -22,11 +18,10 @@
   flex-direction: column;
   text-align: center;
   font-size: x-large;
-  padding-top: 5%;
 
-  p:hover {
-    color: #5000ca;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+  p {
+    margin-bottom: 0;
+    font-size: larger;
   }
 }
 

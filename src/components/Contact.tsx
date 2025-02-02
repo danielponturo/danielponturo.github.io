@@ -1,8 +1,7 @@
 import '../assets/styles/Contact.scss';
 import EmailIcon from '@mui/icons-material/Email';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import BrowserUpdatedIcon from '@mui/icons-material/BrowserUpdated';
 
 function Contact() {
 
@@ -18,10 +17,12 @@ function Contact() {
                         <span><LocalPhoneIcon />&nbsp;+44(0)7842473844</span>
                         <span><EmailIcon />&nbsp;<a href='mailto:daniel.ponturo99@gmail.com'>daniel.ponturo99@gmail.com</a></span>
                     </p>
-                    <div className='cv-download ' >
+                    <div className='cv-download' >
                         <a href='../assets/documents/cv-daniel-ponturo.pdf' download>
-                            <FontAwesomeIcon icon={faDownload} size='3x' />
+
+                            {/* Download my CV */}
                             <p>Download my CV</p>
+                            <BrowserUpdatedIcon style={{ fontSize: 60, margin: 0 }} />
                         </a>
                     </div>
 
