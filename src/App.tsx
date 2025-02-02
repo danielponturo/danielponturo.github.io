@@ -22,10 +22,6 @@ function App() {
         }
     }
 
-    useEffect(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    }, []);
-
     return (
         <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
             <Navigation parentToChild={{ mode }} modeChange={handleModeChange} />
