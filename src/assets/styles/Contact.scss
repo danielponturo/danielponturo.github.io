@@ -1,0 +1,41 @@
+.contacts-container {
+  padding-left: 5%;
+  text-align: left;
+  justify-content: center;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 100px;
+
+  p {
+    font-size: larger;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.cv-download {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: x-large;
+  padding-top: 5%;
+
+  p:hover {
+    color: #5000ca;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+  }
+}
+
+@media screen {
+  @media (max-width: 768px) {
+    .contacts-container {
+      display: block;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+  }
+}
