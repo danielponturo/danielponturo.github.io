@@ -1,5 +1,5 @@
-import { render, fireEvent, waitFor } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
 import App from '../App';
 
 describe('App', () => {
@@ -41,5 +41,20 @@ describe('App', () => {
         await waitFor(() => {
             expect(document.getElementById('light-mode-button')).toBeInTheDocument();
         });
+    });
+
+    it('scrolls to section when clicking on it', () => {
+        const mock = {
+            scrollIntoView: () => { },
+        };
+        const spy = vi.spyOn(mock, 'scrollIntoView').mockImplementation(() => { });
+
+        render(<App />);
+
+        Element.prototype.scrollIntoView = mock.scrollIntoView;
+
+        fireEvent.click(screen.getByRole('button', { name: 'contacts list item' }));
+
+        expect(spy).toHaveBeenCalled();
     });
 });

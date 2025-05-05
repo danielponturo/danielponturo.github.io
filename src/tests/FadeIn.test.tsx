@@ -1,5 +1,5 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { describe, it, beforeEach, vi, expect } from 'vitest';
+import { render, screen, waitFor } from '@testing-library/react';
+import { describe, it, vi, expect } from 'vitest';
 import FadeIn from '../components/FadeIn';
 
 describe('FadeIn', () => {
@@ -42,9 +42,5 @@ describe('FadeIn', () => {
         expect(screen.getByTestId('child_0')).toHaveStyle('opacity: 1');
         expect(screen.getByTestId('child_1')).toHaveStyle('opacity: 1');
         expect(screen.getByTestId('child_2')).toHaveStyle('opacity: 1');
-    });
-
-    it('fake test', () => {
-        render(<FadeIn />);
     });
 });

@@ -31,27 +31,10 @@ function Navigation({ parentToChild, modeChange }: Props) {
     const { mode } = parentToChild;
 
     const [mobileOpen, setMobileOpen] = useState<boolean>(false);
-    const [scrolled, setScrolled] = useState<boolean>(false);
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const navbar = document.getElementById('navigation');
-            if (navbar) {
-                const scrolled = window.scrollY > navbar.clientHeight;
-                setScrolled(scrolled);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
 
     const scrollToSection = (section: string) => {
         const targetElement = document.getElementById(section);
@@ -80,7 +63,7 @@ function Navigation({ parentToChild, modeChange }: Props) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component='nav' id='navigation' className={`navbar-fixed-top${scrolled ? ' scrolled' : ''}`}>
+            <AppBar component='nav' id='navigation' className='navbar-fixed-top'>
                 <Toolbar className='navigation-bar'>
                     <IconButton
                         color='inherit'
@@ -98,14 +81,18 @@ function Navigation({ parentToChild, modeChange }: Props) {
                     )}
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Button key={item[0]} onClick={() => scrollToSection(item[1])} sx={{ color: '#fff' }}>
+                            <Button
+                                key={item[0]}
+                                aria-label={`${item[1]} list item`}
+                                onClick={() => scrollToSection(item[1])} sx={{ color: '#fff' }}
+                            >
                                 {item[0]}
                             </Button>
                         ))}
                     </Box>
                 </Toolbar>
             </AppBar>
-            <nav>
+            <nav id={`mobile-drawer-${mobileOpen ? 'opened' : 'closed'}`}>
                 <Drawer
                     variant='temporary'
                     open={mobileOpen}
