@@ -16,10 +16,17 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 
-const drawerWidth = 240;
-const navItems = [['Expertise', 'expertise'], ['History', 'history'], /*['Projects', 'projects'],*/['Contacts', 'contacts']];
+interface Props {
+    parentToChild: {
+        mode: string
+    };
+    modeChange: () => void;
+};
 
-function Navigation({ parentToChild, modeChange }: any) {
+const drawerWidth = 240;
+const navItems = [['Expertise', 'expertise'], ['History', 'history'], ['Contacts', 'contacts']];
+
+function Navigation({ parentToChild, modeChange }: Props) {
 
     const { mode } = parentToChild;
 
@@ -85,9 +92,9 @@ function Navigation({ parentToChild, modeChange }: any) {
                         <MenuIcon />
                     </IconButton>
                     {mode === 'dark' ? (
-                        <LightModeIcon onClick={() => modeChange()} />
+                        <LightModeIcon id='light-mode-button' onClick={() => modeChange()} />
                     ) : (
-                        <DarkModeIcon onClick={() => modeChange()} />
+                        <DarkModeIcon id='dark-mode-button' onClick={() => modeChange()} />
                     )}
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (

@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
     Main,
     Timeline,
     Expertise,
-    // Project,
     Contact,
     Navigation,
     Footer,
@@ -29,7 +28,6 @@ function App() {
                 <Main />
                 <Expertise />
                 <Timeline />
-                {/* <Project/> */}
                 <Contact />
             </FadeIn>
             <Footer />

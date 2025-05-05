@@ -6,7 +6,7 @@ import '../assets/styles/Main.scss';
 function Main() {
 
     return (
-        <div className='container'>
+        <div id='main' className='container'>
             <div className='about-section'>
                 <div className='image-wrapper'>
                     <img src={avatar} alt='Avatar' />
