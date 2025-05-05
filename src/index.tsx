@@ -1,3 +1,4 @@
+/* v8 ignore next 14 */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
