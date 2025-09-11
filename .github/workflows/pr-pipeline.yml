@@ -1,0 +1,31 @@
+name: PR Pipeline
+
+on:
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  prPipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Run CI
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: "npm"
+        run: npm ci
+      - name: Format code
+        run: npx prettier . --write
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: Apply formatting changes
+          branch: ${{ github.head_ref }}
+      - name: Build app
+        run: npm run build --if-present
+      - name: Test app
+        run: npm test
